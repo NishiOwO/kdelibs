@@ -24,6 +24,12 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+set(dl dl)
+
+if (CMAKE_SYSTEM_NAME MATCHES "NetBSD")
+	set(dl "")
+endif()
+
 set(kdecore_SRCS
     libintl.cpp kdebug.cpp netwm.cpp kapp.cpp
     kconfigbase.cpp kstyle.cpp
@@ -93,7 +99,7 @@ kde2_library(kdecore
         ${kdecore_SRCS}
     PRIVATE_LIBS
         ltdl
-        dl
+        ${dl}
     COMPILE_OPTIONS
         -Wno-format-security
     LIBS
