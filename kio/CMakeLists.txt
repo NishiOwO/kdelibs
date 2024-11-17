@@ -39,6 +39,11 @@ add_subdirectory(kssld)
 
 configure_file(uiserver.h uiserver_stub.h COPYONLY)
 
+set(ltdl ltdl)
+if (CMAKE_SYSTEM_NAME MATCHES "NetBSD")
+	set(ltdl "")
+endif()
+
 set(ksycoca_SOURCES
     chmodjob.cpp
     kdirwatch.cpp
@@ -194,7 +199,7 @@ kde2_library(ksycoca
         ${ksycoca_SOURCES}
     LIBS
         kde2::kio
-        ltdl
+        ${ltdl}
     VERSION
         3.0.0
     )
