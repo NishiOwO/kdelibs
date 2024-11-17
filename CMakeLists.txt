@@ -57,8 +57,10 @@ find_package(PkgConfig REQUIRED)
 find_package(Qt2 REQUIRED)
 
 if(ENABLE_XFT)
-    pkg_search_module(XFT REQUIRED xft)
-    pkg_search_module(FONTCONFIG REQUIRED fontconfig)
+    find_package(XFT REQUIRED xft)
+    find_package(FONTCONFIG REQUIRED fontconfig)
+#    pkg_search_module(XFT REQUIRED xft)
+#    pkg_search_module(FONTCONFIG REQUIRED fontconfig)
     find_package(Freetype REQUIRED)
 endif()
 
