@@ -37,7 +37,7 @@ add_subdirectory(gzip)
 add_subdirectory(bzip2)
 add_subdirectory(kssld)
 
-configure_file(uiserver.h uiserver_stub.h
+configure_file(uiserver.h uiserver_stub.h COPYONLY)
 
 set(ksycoca_SOURCES
     chmodjob.cpp
