@@ -27,6 +27,7 @@
 #include <sys/socket.h>
 #include <cstdio>
 #include <cstdlib>
+#include <cstring>
 #include <sys/un.h>
 #include <errno.h>
 
