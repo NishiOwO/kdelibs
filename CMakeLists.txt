@@ -121,7 +121,7 @@ find_package(Cups)
 if (CMAKE_SYSTEM_NAME MATCHES "NetBSD")
     set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -I/usr/X11R7/include -I/usr/pkg/include")
     set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -I/usr/X11R7/include -I/usr/pkg/include")
-    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -L/usr/X11R7/lib -L/usr/pkg/lib -R/usr/X11R7/lib -R/usr/pkg/lib")
+    add_link_options("-L/usr/X11R7/lib -L/usr/pkg/lib -R/usr/X11R7/lib -R/usr/pkg/lib")
 endif()
 
 create_kde2_config_header()
