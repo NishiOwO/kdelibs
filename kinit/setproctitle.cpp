@@ -173,7 +173,7 @@ kdeinit_initsetproctitle(int argc, char **argv, char **envp)
 	}
 }
 
-#if SPT_TYPE != SPT_BUILTIN
+#if SPT_TYPE != SPT_BUILTIN && !defined(__NetBSD__)
 
 /*VARARGS1*/
 static void
