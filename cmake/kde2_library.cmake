@@ -110,9 +110,7 @@ function(kde2_library library_name)
 
     export(EXPORT ${real_library_name}Targets
         FILE ${CMAKE_CURRENT_BINARY_DIR}/${library_name}/${real_library_name}Targets.cmake
-        TARGETS ${library_name}
         NAMESPACE kde2::
-        EXPORT_LINK_INTERFACE_LIBRARIES
         )
 
     # Export the aliases
