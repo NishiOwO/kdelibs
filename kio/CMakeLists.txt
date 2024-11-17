@@ -37,8 +37,6 @@ add_subdirectory(gzip)
 add_subdirectory(bzip2)
 add_subdirectory(kssld)
 
-configure_file(uiserver.h uiserver_stub.h COPYONLY)
-
 set(ltdl ltdl)
 if (CMAKE_SYSTEM_NAME MATCHES "NetBSD")
 	set(ltdl "")
