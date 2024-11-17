@@ -24,6 +24,14 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+set(dl dl)
+set(ltdl ltdl)
+
+if (CMAKE_SYSTEM_NAME MATCHES "NetBSD")
+	set(ltdl "")
+	set(dl "")
+endif()
+
 set(libmcop_SRCS
     common.cpp buffer.cc connection.cc core.cc dispatcher.cc
     iomanager.cc object.cc socketconnection.cc tcpconnection.cc
@@ -41,8 +49,8 @@ kde2_library(libmcop
     SOURCES
         ${libmcop_SRCS}
     LIBS
-        ltdl
-        dl
+        ${ltdl}
+        ${dl}
     COMPILE_DEFINITIONS
         -DEXTENSION_DIR="${CMAKE_INSTALL_FULL_LIBDIR}"
         -DTRADER_DIR="${CMAKE_INSTALL_FULL_LIBDIR}/mcop"
