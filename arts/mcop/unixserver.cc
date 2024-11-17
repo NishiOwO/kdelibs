@@ -41,6 +41,8 @@
 #include <stdio.h>
 #include <errno.h>
 
+#include <cstring>
+
 using namespace std;
 using namespace Arts;
 
