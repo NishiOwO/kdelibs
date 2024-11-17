@@ -24,6 +24,12 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+set(acl acl)
+
+if (CMAKE_SYSTEM_NAME MATCHES "NetBSD")
+	set(acl "")
+endif()
+
 qt2_wrap_cpp(ACL_SOURCES
     SOURCES
         acl.h kaclmanipulation.h)
@@ -36,7 +42,7 @@ kde2_module(libkacl_prop_page
     LIBS
         kde2::kfile
         kde2::kdeui
-        acl
+        ${acl}
     DESKTOP_FILE
         kaclplugin.desktop
     )
