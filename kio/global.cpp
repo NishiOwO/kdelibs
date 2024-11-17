@@ -561,7 +561,11 @@ QString KIO::findDeviceMountPoint( const QString& filename )
 
 #ifdef HAVE_GETMNTINFO
 
+#ifdef __NetBSD__
+    struct statvfs *mounted;
+#else
     struct statfs *mounted;
+#endif
 
     int num_fs = getmntinfo(&mounted, MNT_NOWAIT);
 
@@ -901,7 +905,11 @@ bool KIO::probably_slow_mounted(const QString& filename)
 
 #ifdef HAVE_GETMNTINFO
 
+#ifdef __NetBSD__
+    struct statvfs *mounted;
+#else
     struct statfs *mounted;
+#endif
     char    realpath_buffer[MAXPATHLEN];
 
     int num_fs = getmntinfo(&mounted, MNT_NOWAIT);
