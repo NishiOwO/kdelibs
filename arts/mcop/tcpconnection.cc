@@ -26,6 +26,7 @@
 #include <sys/socket.h>
 #include <cstdio>
 #include <cstdlib>
+#include <cstring>
 #define queue cqueue
 #include <netdb.h>
 #undef queue
