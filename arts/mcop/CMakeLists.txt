@@ -25,7 +25,6 @@
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 set(dl dl)
-set(ltdl ltdl)
 
 if (CMAKE_SYSTEM_NAME MATCHES "NetBSD")
 	set(ltdl "")
