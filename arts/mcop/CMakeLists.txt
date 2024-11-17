@@ -27,7 +27,6 @@
 set(dl dl)
 
 if (CMAKE_SYSTEM_NAME MATCHES "NetBSD")
-	set(ltdl "")
 	set(dl "")
 endif()
 
@@ -48,7 +47,7 @@ kde2_library(libmcop
     SOURCES
         ${libmcop_SRCS}
     LIBS
-        ${ltdl}
+        ltdl
         ${dl}
     COMPILE_DEFINITIONS
         -DEXTENSION_DIR="${CMAKE_INSTALL_FULL_LIBDIR}"
