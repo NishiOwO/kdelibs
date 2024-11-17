@@ -24,11 +24,9 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-set(ltdl ltdl)
 set(dl dl)
 
 if (CMAKE_SYSTEM_NAME MATCHES "NetBSD")
-	set(ltdl "")
 	set(dl "")
 endif()
 
@@ -47,7 +45,7 @@ target_link_libraries(kdeinit
     kde2::kdeui
     kde2::kio
     kde2::kdecore
-    ${ltdl}
+    ltdl
     ${dl}
     )
 
